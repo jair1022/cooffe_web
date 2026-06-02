@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Coffee Access Premium – Explora, aprende y solicita más de 30 variedades de café del mundo. Aplicación accesible con soporte para lectores de pantalla." />
+  <meta name="theme-color" content="#1a0a00" />
+  <title>Coffee Access Premium – Descubre el mundo del café</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Coffee Access Premium" />
+  <meta property="og:description" content="Descubre más de 30 variedades de café del mundo." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="theme-dark" data-font-size="medium">
+
+  <!-- ═══════════════════════════════════════════
+       SKIP LINK – Acceso rápido al contenido
+  ═══════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link" tabindex="1">Saltar al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════
+       LIVE REGION – Anuncios para lectores de pantalla
+  ═══════════════════════════════════════════ -->
+  <div id="sr-announce" aria-live="polite"   aria-atomic="true" class="sr-only" role="status"></div>
+  <div id="sr-alert"    aria-live="assertive" aria-atomic="true" class="sr-only" role="alert"></div>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER / NAVEGACIÓN
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner container">
+
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="Coffee Access Premium – Ir al inicio">
+        <span class="logo-icon" aria-hidden="true">☕</span>
+        <span class="logo-text">Coffee<span class="logo-accent">Access</span></span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav-list" role="list">
+          <li><a href="#hero"      class="nav-link">Inicio</a></li>
+          <li><a href="#catalog"   class="nav-link">Catálogo</a></li>
+          <li><a href="#favorites" class="nav-link">Favoritos</a></li>
+          <li><a href="#orders"    class="nav-link">Pedidos</a></li>
+          <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <!-- Controles de accesibilidad + tema -->
+      <div class="header-controls" role="toolbar" aria-label="Controles de accesibilidad">
+
+        <button id="btn-theme"
+                class="ctrl-btn"
+                aria-label="Cambiar a modo claro"
+                aria-pressed="true"
+                title="Modo claro/oscuro">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun"  aria-hidden="true" style="display:none">☀️</span>
+        </button>
+
+        <button id="btn-contrast"
+                class="ctrl-btn"
+                aria-label="Activar alto contraste"
+                aria-pressed="false"
+                title="Alto contraste">
+          <span aria-hidden="true">◑</span>
+        </button>
+
+        <button id="btn-font-up"
+                class="ctrl-btn"
+                aria-label="Aumentar tamaño de texto"
+                title="Texto más grande">
+          <span aria-hidden="true">A+</span>
+        </button>
+
+        <button id="btn-font-down"
+                class="ctrl-btn"
+                aria-label="Reducir tamaño de texto"
+                title="Texto más pequeño">
+          <span aria-hidden="true">A−</span>
+        </button>
+
+        <!-- Hamburger móvil -->
+        <button id="btn-menu"
+                class="menu-toggle"
+                aria-label="Abrir menú de navegación"
+                aria-expanded="false"
+                aria-controls="mobile-nav">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Menú móvil" aria-hidden="true" hidden>
+      <ul class="mobile-nav-list" role="list">
+        <li><a href="#hero"      class="mobile-nav-link">Inicio</a></li>
+        <li><a href="#catalog"   class="mobile-nav-link">Catálogo</a></li>
+        <li><a href="#favorites" class="mobile-nav-link">Favoritos</a></li>
+        <li><a href="#orders"    class="mobile-nav-link">Pedidos</a></li>
+        <li><a href="#dashboard" class="mobile-nav-link">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════ -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- ─────────────────────────────────────────
+         HERO SECTION
+    ───────────────────────────────────────── -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="hero-gradient"></div>
+      </div>
+
+      <div class="hero-content container">
+        <div class="hero-badge" aria-hidden="true">
+          <span class="badge-dot"></span>
+          Premium Coffee Experience
+        </div>
+
+        <h1 id="hero-title" class="hero-title">
+          Descubre el<br />
+          <span class="hero-title-accent">mundo del café</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Explora sabores, aromas y culturas a través de más de
+          <strong>30 variedades de café</strong> de todo el planeta.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalog"
+             class="btn btn-primary btn-hero"
+             aria-label="Explorar el catálogo de cafés">
+            <span aria-hidden="true">☕</span> Explorar Cafés
+          </a>
+          <a href="#dashboard"
+             class="btn btn-ghost btn-hero"
+             aria-label="Ver estadísticas del dashboard">
+            <span aria-hidden="true">📊</span> Ver Dashboard
+          </a>
+        </div>
+
+        <!-- Stats rápidas -->
+        <div class="hero-stats" role="list" aria-label="Estadísticas de la aplicación">
+          <div class="hero-stat" role="listitem">
+            <span class="stat-num">30+</span>
+            <span class="stat-label">Variedades</span>
+          </div>
+          <div class="hero-stat" role="listitem">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">Países</span>
+          </div>
+          <div class="hero-stat" role="listitem">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Accesible</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         SEARCH + FILTROS
+    ───────────────────────────────────────── -->
+    <section id="search-section" class="search-section" aria-labelledby="search-title">
+      <div class="container">
+        <h2 id="search-title" class="section-title">Encuentra tu café ideal</h2>
+        <p class="section-subtitle">Busca por nombre, país, tipo de grano o intensidad</p>
+
+        <div class="search-wrapper" role="search" aria-label="Búsqueda de cafés">
+          <label for="search-input" class="sr-only">Buscar café</label>
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="search"
+                 id="search-input"
+                 class="search-input"
+                 placeholder="Buscar café, país, tipo de grano..."
+                 aria-label="Buscar café por nombre, país o tipo de grano"
+                 aria-controls="catalog-grid"
+                 autocomplete="off"
+                 spellcheck="false" />
+          <button id="btn-clear-search"
+                  class="search-clear"
+                  aria-label="Limpiar búsqueda"
+                  hidden>✕</button>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filtros rápidos">
+          <button class="filter-chip active" data-filter="all"     aria-pressed="true">Todos</button>
+          <button class="filter-chip"        data-filter="suave"   aria-pressed="false">Suave</button>
+          <button class="filter-chip"        data-filter="medio"   aria-pressed="false">Medio</button>
+          <button class="filter-chip"        data-filter="fuerte"  aria-pressed="false">Fuerte</button>
+          <button class="filter-chip"        data-filter="arabica" aria-pressed="false">Arábica</button>
+          <button class="filter-chip"        data-filter="robusta" aria-pressed="false">Robusta</button>
+        </div>
+
+        <p id="results-count"
+           class="results-count"
+           aria-live="polite"
+           aria-atomic="true">
+          Mostrando <strong id="results-num">30</strong> cafés
+        </p>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         CATÁLOGO DE CAFÉS
+    ───────────────────────────────────────── -->
+    <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+      <div class="container">
+        <h2 id="catalog-title" class="section-title">Catálogo de Cafés</h2>
+        <p class="section-subtitle">Más de 30 variedades del mundo, cada una con su historia</p>
+
+        <div id="catalog-grid"
+             class="catalog-grid"
+             role="list"
+             aria-label="Catálogo de cafés disponibles"
+             aria-live="polite">
+        </div>
+
+        <div id="empty-state" class="empty-state" hidden role="status" aria-live="polite">
+          <span class="empty-icon" aria-hidden="true">🔍</span>
+          <h3>Sin resultados</h3>
+          <p>No encontramos cafés que coincidan con tu búsqueda.</p>
+          <button class="btn btn-primary" id="btn-reset-search">Limpiar filtros</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         FAVORITOS
+    ───────────────────────────────────────── -->
+    <section id="favorites" class="favorites-section" aria-labelledby="favorites-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 id="favorites-title" class="section-title">Mis Favoritos</h2>
+            <p class="section-subtitle">Tu colección personal de cafés guardados</p>
+          </div>
+          <button id="btn-clear-favorites"
+                  class="btn btn-ghost btn-sm"
+                  aria-label="Eliminar todos los favoritos"
+                  hidden>
+            Limpiar todo
+          </button>
+        </div>
+        <div id="favorites-grid"
+             class="catalog-grid"
+             role="list"
+             aria-label="Lista de cafés favoritos"
+             aria-live="polite">
+        </div>
+        <div id="favorites-empty" class="empty-state" role="status">
+          <span class="empty-icon" aria-hidden="true">❤️</span>
+          <h3>Sin favoritos aún</h3>
+          <p>Explora el catálogo y guarda tus cafés favoritos.</p>
+          <a href="#catalog" class="btn btn-primary">Explorar catálogo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         HISTORIAL DE PEDIDOS
+    ───────────────────────────────────────── -->
+    <section id="orders" class="orders-section" aria-labelledby="orders-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 id="orders-title" class="section-title">Mis Pedidos</h2>
+            <p class="section-subtitle">Historial de tus solicitudes de café</p>
+          </div>
+          <button id="btn-clear-orders"
+                  class="btn btn-ghost btn-sm"
+                  aria-label="Limpiar historial de pedidos"
+                  hidden>
+            Limpiar historial
+          </button>
+        </div>
+        <div id="orders-list"
+             class="orders-list"
+             role="list"
+             aria-label="Historial de pedidos"
+             aria-live="polite">
+        </div>
+        <div id="orders-empty" class="empty-state" role="status">
+          <span class="empty-icon" aria-hidden="true">📋</span>
+          <h3>Sin pedidos aún</h3>
+          <p>Solicita un café desde el catálogo y aquí verás tu historial.</p>
+          <a href="#catalog" class="btn btn-primary">Explorar catálogo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────
+         DASHBOARD DE ESTADÍSTICAS
+    ───────────────────────────────────────── -->
+    <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-title">
+      <div class="container">
+        <h2 id="dashboard-title" class="section-title">Tu Dashboard</h2>
+        <p class="section-subtitle">Estadísticas de tu actividad en Coffee Access Premium</p>
+
+        <div class="kpi-grid" role="list" aria-label="Estadísticas principales">
+          <article class="kpi-card" role="listitem" aria-labelledby="kpi-explored-label">
+            <div class="kpi-icon" aria-hidden="true">☕</div>
+            <div class="kpi-data">
+              <span id="kpi-explored" class="kpi-num">0</span>
+              <span id="kpi-explored-label" class="kpi-label">Cafés explorados</span>
+            </div>
+            <div class="kpi-bar" aria-hidden="true">
+              <div class="kpi-bar-fill" id="bar-explored" style="width:0%"></div>
+            </div>
+          </article>
+          <article class="kpi-card" role="listitem" aria-labelledby="kpi-favorites-label">
+            <div class="kpi-icon" aria-hidden="true">❤️</div>
+            <div class="kpi-data">
+              <span id="kpi-favorites" class="kpi-num">0</span>
+              <span id="kpi-favorites-label" class="kpi-label">Favoritos guardados</span>
+            </div>
+            <div class="kpi-bar" aria-hidden="true">
+              <div class="kpi-bar-fill" id="bar-favorites" style="width:0%"></div>
+            </div>
+          </article>
+          <article class="kpi-card" role="listitem" aria-labelledby="kpi-orders-label">
+            <div class="kpi-icon" aria-hidden="true">📦</div>
+            <div class="kpi-data">
+              <span id="kpi-orders" class="kpi-num">0</span>
+              <span id="kpi-orders-label" class="kpi-label">Pedidos realizados</span>
+            </div>
+            <div class="kpi-bar" aria-hidden="true">
+              <div class="kpi-bar-fill" id="bar-orders" style="width:0%"></div>
+            </div>
+          </article>
+          <article class="kpi-card" role="listitem" aria-labelledby="kpi-streak-label">
+            <div class="kpi-icon" aria-hidden="true">🔥</div>
+            <div class="kpi-data">
+              <span id="kpi-streak" class="kpi-num">1</span>
+              <span id="kpi-streak-label" class="kpi-label">Días de racha</span>
+            </div>
+            <div class="kpi-bar" aria-hidden="true">
+              <div class="kpi-bar-fill" id="bar-streak" style="width:10%"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="chart-card" aria-labelledby="chart-title">
+          <h3 id="chart-title" class="chart-title">Distribución por intensidad</h3>
+          <div class="chart-bar-container"
+               role="img"
+               aria-label="Gráfico de barras con distribución de cafés por intensidad">
+            <div class="chart-bars"   id="chart-intensity"        aria-hidden="true"></div>
+            <div class="chart-labels" id="chart-intensity-labels" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" aria-hidden="true">
+            <span class="logo-icon">☕</span>
+            <span class="logo-text">Coffee<span class="logo-accent">Access</span></span>
+          </div>
+          <p class="footer-tagline">
+            Una experiencia premium y accesible para todos los amantes del café.
+          </p>
+        </div>
+        <nav aria-label="Navegación del pie de página">
+          <h3 class="footer-heading">Explorar</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#catalog">Catálogo</a></li>
+            <li><a href="#favorites">Favoritos</a></li>
+            <li><a href="#orders">Pedidos</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+          </ul>
+        </nav>
+        <div class="footer-accessibility">
+          <h3 class="footer-heading">Accesibilidad</h3>
+          <p>Esta aplicación cumple las recomendaciones <abbr title="Web Content Accessibility Guidelines 2.2">WCAG 2.2</abbr> y las buenas prácticas europeas de accesibilidad digital.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Coffee Access Premium. Todos los derechos reservados.</p>
+        <p class="footer-a11y-badge"><span aria-hidden="true">♿</span> Accesible WCAG 2.2</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL DE DETALLES
+  ═══════════════════════════════════════════ -->
+  <div id="modal-overlay"
+       class="modal-overlay"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-title"
+       aria-describedby="modal-desc"
+       hidden
+       tabindex="-1">
+    <div class="modal-container" role="document">
+
+      <!-- ── HERO HEADER ── -->
+      <div class="modal-hero" id="modal-hero-bg">
+        <button id="modal-close"
+                class="modal-close"
+                aria-label="Cerrar detalles del café">
+          <span aria-hidden="true">✕</span>
+        </button>
+        <div class="modal-hero-emoji" id="modal-hero-emoji" aria-hidden="true">☕</div>
+        <div class="modal-hero-info">
+          <div class="modal-hero-badges">
+            <span id="modal-badge"         class="modal-badge"></span>
+            <span id="modal-badge-bean"     class="modal-badge-secondary"></span>
+          </div>
+          <h2 id="modal-title" class="modal-title"></h2>
+          <p  id="modal-origin" class="modal-origin"></p>
+          <!-- Intensidad estrellas -->
+          <div id="modal-intensity-stars" class="modal-intensity-row" aria-label=""></div>
+        </div>
+      </div>
+
+      <!-- ── TABS ── -->
+      <div class="modal-tabs" role="tablist" aria-label="Secciones del café">
+        <button class="modal-tab active" role="tab" data-tab="info"    aria-selected="true"  id="tab-info">
+          <span aria-hidden="true">📋</span> Detalles
+        </button>
+        <button class="modal-tab" role="tab" data-tab="flavor"  aria-selected="false" id="tab-flavor">
+          <span aria-hidden="true">👅</span> Sabor
+        </button>
+        <button class="modal-tab" role="tab" data-tab="brew"    aria-selected="false" id="tab-brew">
+          <span aria-hidden="true">⚗️</span> Preparación
+        </button>
+        <button class="modal-tab" role="tab" data-tab="history" aria-selected="false" id="tab-history">
+          <span aria-hidden="true">📖</span> Historia
+        </button>
+      </div>
+
+      <!-- ── BODY ── -->
+      <div class="modal-body">
+
+        <!-- PANEL: Información / Detalles -->
+        <div id="panel-info" class="modal-panel active" role="tabpanel" aria-labelledby="tab-info">
+
+          <!-- Descripción principal -->
+          <p id="modal-desc" class="modal-main-desc"></p>
+
+          <!-- Grid de características -->
+          <div class="detail-grid" aria-label="Características del café">
+            <div class="detail-card">
+              <span class="detail-icon" aria-hidden="true">🌍</span>
+              <span class="detail-label">País de origen</span>
+              <span id="modal-country" class="detail-value"></span>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon" aria-hidden="true">🫘</span>
+              <span class="detail-label">Tipo de grano</span>
+              <span id="modal-bean" class="detail-value"></span>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon" aria-hidden="true">⚡</span>
+              <span class="detail-label">Cafeína</span>
+              <span id="modal-caffeine" class="detail-value"></span>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon" aria-hidden="true">🔥</span>
+              <span class="detail-label">Intensidad</span>
+              <span id="modal-intensity-val" class="detail-value"></span>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon" aria-hidden="true">🌡️</span>
+              <span class="detail-label">Temperatura</span>
+              <span id="modal-temp" class="detail-value"></span>
+            </div>
+            <div class="detail-card">
+              <span class="detail-icon" aria-hidden="true">☕</span>
+              <span class="detail-label">Tipo de bebida</span>
+              <span id="modal-type" class="detail-value"></span>
+            </div>
+          </div>
+
+          <!-- Notas de sabor rápidas -->
+          <div class="detail-flavor-preview">
+            <p class="detail-section-label">
+              <span aria-hidden="true">✨</span> Notas de sabor principales
+            </p>
+            <div id="modal-flavor-quick" class="flavor-tags"></div>
+          </div>
+
+        </div>
+
+        <!-- PANEL: Perfil de Sabor -->
+        <div id="panel-flavor" class="modal-panel" role="tabpanel" aria-labelledby="tab-flavor" hidden>
+          <p class="panel-intro">
+            Cada café tiene un perfil sensorial único. Aquí puedes ver cómo se distribuyen las características de sabor.
+          </p>
+          <div id="modal-flavor-tags"  class="flavor-tags flavor-tags--large"></div>
+          <div class="flavor-chart-title">Perfil sensorial</div>
+          <div id="modal-flavor-chart" class="flavor-chart"></div>
+        </div>
+
+        <!-- PANEL: Preparación -->
+        <div id="panel-brew" class="modal-panel" role="tabpanel" aria-labelledby="tab-brew" hidden>
+          <div class="brew-header">
+            <span class="brew-icon" aria-hidden="true">⚗️</span>
+            <div>
+              <p class="brew-method-label">Método recomendado</p>
+              <p id="modal-brew-method" class="brew-method-name"></p>
+            </div>
+          </div>
+          <div class="brew-steps" id="modal-brew-steps"></div>
+        </div>
+
+        <!-- PANEL: Historia -->
+        <div id="panel-history" class="modal-panel" role="tabpanel" aria-labelledby="tab-history" hidden>
+          <div class="history-quote" id="modal-history-quote" aria-hidden="true"></div>
+          <p id="modal-history" class="history-text"></p>
+          <div class="history-meta" id="modal-history-meta"></div>
+        </div>
+
+      </div><!-- /modal-body -->
+
+      <!-- ── FOOTER ── -->
+      <div class="modal-footer">
+        <div class="modal-footer-voice">
+          <button id="modal-btn-speak"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Escuchar descripción de este café">
+            <span aria-hidden="true">🔊</span> Escuchar
+          </button>
+          <button id="modal-btn-stop"
+                  class="btn btn-ghost btn-sm"
+                  aria-label="Detener lectura de voz"
+                  hidden>
+            <span aria-hidden="true">⏹</span> Detener
+          </button>
+          <div class="speech-speed" role="group" aria-label="Velocidad de lectura">
+            <label for="speech-rate" class="speech-label">Vel.:</label>
+            <input type="range" id="speech-rate" class="speech-range"
+                   min="0.5" max="2" step="0.1" value="1"
+                   aria-label="Velocidad de lectura, valor 1x" />
+            <span id="speech-rate-val" aria-hidden="true">1x</span>
+          </div>
+        </div>
+        <div class="modal-footer-actions">
+          <button id="modal-btn-favorite"
+                  class="btn btn-accent"
+                  aria-label="Agregar a favoritos"
+                  aria-pressed="false">
+            <span aria-hidden="true">❤️</span>
+            <span id="modal-fav-text">Favorito</span>
+          </button>
+          <button id="modal-btn-order"
+                  class="btn btn-primary"
+                  aria-label="Solicitar este café">
+            <span aria-hidden="true">🛒</span> Solicitar
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /modal-container -->
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TOAST NOTIFICATIONS
+  ═══════════════════════════════════════════ -->
+  <div id="toast-container"
+       class="toast-container"
+       aria-live="polite"
+       aria-atomic="true"
+       role="status">
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ORDER SUCCESS OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div id="order-success"
+       class="order-success-overlay"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="order-success-title"
+       hidden
+       tabindex="-1">
+    <div class="order-success-card">
+      <div class="order-success-icon" aria-hidden="true">✅</div>
+      <h2 id="order-success-title" class="order-success-title">¡Pedido confirmado!</h2>
+      <p class="order-success-sub">Tu café está en camino</p>
+      <div class="order-success-detail">
+        <div class="order-detail-row">
+          <span>Número de pedido:</span>
+          <strong id="order-num">#000000</strong>
+        </div>
+        <div class="order-detail-row">
+          <span>Café:</span>
+          <strong id="order-coffee-name">—</strong>
+        </div>
+        <div class="order-detail-row">
+          <span>Fecha:</span>
+          <strong id="order-date">—</strong>
+        </div>
+      </div>
+      <button id="btn-close-order-success"
+              class="btn btn-primary btn-full"
+              aria-label="Cerrar confirmación de pedido">
+        ¡Genial, gracias!
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
